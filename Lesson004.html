@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 004</title>
+</head>
+<body>
+    <!---
+    Attributes allow you to modify behavior of an HTML tag. You've already seen a few of them but we'll go into a few more examples of them.
+
+A really good example we have seen already is the href attribute of the <a href="www.frontendmasters.com"></a> tag. By modifying the href we're modifying what the tag does. It's contextual as well: href only works on a tags. You can't add a href to a div and expect to suddenly work as a link.
+
+Another one we say is the type attribute on the input. By changing the type you're changing what sort of input is being show
+    -->
+
+    <input type="text" />
+
+    <input type="color" />
+    <input type="file" />
+    <input type="number" />
+    <input type="datetime-local" />
+    <input type="radio" />
+    <input type="checkbox" />
+    
+    <!--
+    href and type are specific to a few tags. There are other attributes like class and id that are universal and can be applied to (nearly) all tags. These themselves are inert; they don't do anything, but allow other things to find them later (we'll cover them heavily in CSS and JS sections.)
+    -->
+
+    <a href="www.frontendmasters.com">Frontend Masters</a>  
+
+    <h3 class="the-red-one">This one is red</h3>
+<h3 class="the-blue-one">This one is blue</h3>
+
+<style>
+  /* don't worry about this yet, it's CSS */
+  .the-red-one {
+    color: red;
+  }
+
+  .the-blue-one {
+    color: blue;
+  }
+</style>
+
+<!---
+Classes are more useful than IDs. You should use them 95% of the time. A class is reusable. Now I could create another tag (doesn't even have to be another h3) and that CSS style would be reapplied to it! You can also give multiple classes to one tag.
+-->
+
+    <h3 id="the-red-one">This one is red</h3>
+    <h3 id="the-blue-one">This one is blue</h3>
+
+    <style>
+        #the-red-one {
+            color: red;
+        }
+        #the-blue-one {
+            color: blue;
+        }
+
+    </style>
+
+<h3 class="the-red-one bolded">This is red and bold</h3>
+
+<style>
+  .bolded {
+    font-weight: bold;
+  }
+</style>
+
+<!--
+IDs
+Classes are far more useful. However there are IDs that you may need occasionally. A key thing is that an ID is unique. Whereas I've already used the the-red-one class twice, you can't do with IDs. They're designed to not be reusable; they're unique to the page.
+
+Again, in general, even if you happen to have just one of something, it's best to just use classes for everything and more-or-less pretend that IDs are not an option at all. You really only want to use IDs when something is unique and you want to make sure it stays unique. A good example is if you have a JavaScript app that needs to put its HTML inside a specific div, you could use an ID for that (you could still use a class and some people do.)
+-->
+
+<h3 class="the-red-one">This one is red</h3>
+<h3 class="the-blue-one">This one is blue</h3>
+
+<h3 id="brand">My Site's Branding</h3>
+<style>
+    #brand {
+        font-size: 2em;
+        font-weight: bold;
+        text-transform: uppercase;
+        }
+</style>
+
+<!---
+Let's talk about organizing HTML and how to make the most of it. This will help a ton once you get to the CSS section.
+
+Let's say you're making a social media website and you're going to make the "news feed" section where you can see all the updates from your friends. A user would expect see a bunch of posts. Each post could have an author, a date that it was posted, a profile picture, and the message itself the user posted. Let's model that as HTML
+-->
+
+<div>
+    <h2>@sassy_pants_mcgee</h2>
+    <h3>Posted 15m ago</h3>
+    <img src="http://pets-images.dev-apis.com/pets/dog25.jpg" alt="a doggy" />
+    <p>
+      You ever think about barking out the window? What would happen if I didn't
+      bark at them? Keeps me up at night.
+    </p>
+  </div>
+
+  <div>
+    <h2>@sassy_pants_mcgee</h2>
+    <h3>Posted 1h ago</h3>
+    <img src="http://pets-images.dev-apis.com/pets/dog25.jpg" alt="a doggy" />
+    <p>
+      I'm so excited to be going to the beach with you! It's going to be so
+      fun!
+      </p>
+  </div>
+
+  <!---
+  Notice we keep everything together with a div. Like I said before, it's a container, a cardboard box. We have a post and keep it all together with an encapsulating div. We also could have used the <article></article> tag. What's the difference between article and div? As far as the browser is concerned, nothing. Keep in mind that you just write code once, you also have to go back later and maintain it. What if there's a bug later and you need to debug what's wrong with it? It's good to write code that makes it very obvious what you're trying to do. In this case, article lets your future self (or coworkers) know that this is a self-contained bit of content. Divs have no meaning. Like a cardboard box, it's what is inside that matters. An article is a cardbox with a label on it that says it's a self-contained bit of content. Both are valid here, but let's roll with divs (since you'll more commonly see that.)
+
+Let's make this better. Let's add classes.
+  -->
+
+  <div class="post">
+    <h2 class="author">@sassy_pants_mcgee</h2>
+    <h3 class="date">Posted 15m ago</h3>
+    <img class="profile-picture" src="http://pets-images.dev-apis.com/pets/dog25.jpg" alt="a doggy" />
+    <p class="message">
+        You ever think about barking out the window? What would happen if I didn't
+      bark at them? Keeps me up at night.
+    </p>
+  </div>
+
+  <div class="post">
+    <h2 class="author">@sassy_pants_mcgee</h2>
+    <h3 class="date">Posted 1h ago</h3>
+    <img class="profile-picture" src="http://pets-images.dev-apis.com/pets/dog25.jpg" alt="a doggy" />
+    <p class="message">
+        I'm so excited to be going to the beach with you! It's going to be so
+      fun!
+      </p>
+  </div>
+
+  <div class="social-post">
+    <h2 class="user-name">@sassy_pants_mcgee</h2>
+    <h3 class="posted-date">Posted 15m ago</h3>
+    <img
+         class="profile-picture"
+         src="http://pets-images.dev-apis.com/pets/dog25.jpg"
+         alt="a doggy"
+         />
+    <p class="social-post-text">
+      You ever think about barking out the window? What would happen if I didn't
+      bark at them? Keeps me up at night.
+    </p>
+  </div>
+
+  <div class="social-post">
+    <h2 class="user-name">@sassy_pants_mcgee</h2>
+    <h3 class="posted-date">Posted 1h ago</h3>
+    <img
+         class="profile-picture"
+         src="http://pets-images.dev-apis.com/pets/dog25.jpg"
+         alt="a doggy"
+         />
+         <p class="social-post-text">
+      I'm so excited to be going to the beach with you! It's going to be so
+      fun!
+      </p>
+  </div>
+
+  <!---
+  Notice it looks exactly the same. But now try reading the code we just wrote instead of the one from before. Everything is way clearer what it is. We took a label gun and labelled everything. This code is way easier to maintain.
+
+What's more, this is reusable now. We could have a full feed of these.
+  -->
+
+  <div class="social-feed">
+    <div class="social-post">
+      <h2 class="user-name">@sassy_pants_mcgee</h2>
+      <h3 class="posted-date">Posted 15m ago</h3>
+      <img
+           class="profile-picture"
+           src="http://pets-images.dev-apis.com/pets/dog25.jpg"
+           alt="a doggy"
+           />
+      <p class="social-post-text">
+        You ever think about barking out the window? What would happen if I didn't
+        bark at them? Keeps me up at night.
+      </p>
+    </div>
+    <div class="social-post">
+      <h2 class="user-name">@TailCurious</h2>
+      <h3 class="posted-date">Posted 18m ago</h3>
+      <img
+           class="profile-picture"
+           src="http://pets-images.dev-apis.com/pets/dog26.jpg"
+           alt="a different doggy"
+           />
+      <p class="social-post-text">
+        You ever notice that white bit of fluff behind you? Is that just me? I
+        always try to chase it but it's always gets away. #ScaryTails
+      </p>
+    </div>
+    <div class="social-post">
+      <h2 class="user-name">@haveUrCakeAndEatIt2</h2>
+      <h3 class="posted-date">Posted 21m ago</h3>
+      <img
+           class="profile-picture"
+           src="http://pets-images.dev-apis.com/pets/dog27.jpg"
+           alt="a doggy"
+           />
+      <p class="social-post-text">#BirthdayGrrrrrrrrrrl</p>
+    </div>
+  </div>
+
+  <!---
+  Now I used a div to enclose the entire social feed, and then I reused our structure from above to remake a bunch of the same post. Pretty neat, huh? We build one component and then reuse it over and over again. I imagine then we'd put the social-feed div inside another news component and then that inside of our app page. Our app div might have a navbar, the news div, a footer, a sidebar, and other things. But we'd just do nested things like we did with our social-feed.
+
+Let's construct a navbar for fun.
+  -->
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-list-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-list-item">
+        <a class="nav-link" href="/news">Newsfeed</a>
+      </li>
+      <li class="nav-list-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-list-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <style>
+    .nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+
+<!---
+A few things here:
+
+It obviously isn't styled. We'd expect to look like the navbar on this site: horizontal and fixed to the top. Don't worry about that for now, we fix all that with CSS. For now we're writing just HTML and we're just concerned about the content and not the style. (CSS can basically make any content look like anything you want.)
+Those links don't go anywhere if you click them. They're relative links. If you have an absolute link like href="www.google.com" that will actually take you to Google. But if your website were www.example.com and on there you had link to href="/about" it would take you to www.example.com/about. It's relative to the base URL. The leading slash means it's always www.example.com/about no matter where you are on the site. If you're www.example.com/blah and there's a link to href="about" with no slash, the link will take you to www.example.com/blah/about whereas href="/about" will take you to www.example.com/about.
+We didn't get nav a class. If you only have one nav that could make sense. If you have many nav (maybe nav in the footer and one in the sidebar) then you'd want to give it a class. Not everything has to have a class.
+I chose to do this with a ul and li. You could have done divs inside of divs and just used classes to differentiate them. Both totally valid ways of doing it.
+There's no magic way to name classes. I used nav-list but could have just as easy been head-navigation. It's up to what makes sense to you. Naming things is hard.
+There you go! HTML is 95% just what I've shown you.
+-->
+
+</body>
+</html>

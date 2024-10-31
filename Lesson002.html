@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 003</title>
+    <style>
+        body {
+            background-image: url("https://images.unsplash.com/photo-1519681393144-44d0e88e84c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+            background-size: cover;
+            background-position: center;
+        }
+
+        img {
+        width: 500px;     /* set the width of the image */
+        height: 500px;    /* set the height of the image */
+        object-fit: cover; /* make sure the image is scaled to fit inside the container */
+    }
+        
+    </style>
+
+</head>
+<body>
+    <!---
+    
+    img – An image. You use this to load images onto the page. This can be confusing because you can use CSS to bring in images too. The key difference is that when the image is apart of the content, like a diagram that shows data you're talking about or a picture that shows something from the article, it should be an img tag. If it's a nice background image or something that's for decoration of your website, use CSS. An img tag needs a src to say where the image is coming from and alt to say what is in the image for screen readers so that the image will still be useful to blind people, people who are hard of seeing, and Google and Bing search engines. img are always self-closing tags. Example: <img src="http://pets-images.dev-apis.com/pets/dog25.jpg" alt="an adorable dog" />
+
+    -->
+
+    <img src="https://images.unsplash.com/photo-1519681393144-44d0e88e84c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="A beautiful landscape">
+
+    <p>This is a paragraph with an image in it. The image is a landscape photo taken by Unsplash.com. It's a beautiful photo that shows off the beauty of nature and the beauty of the people who live in it. It's a great photo to use as a background image or as a logo on your website.</p>
+
+    <p>You can also use CSS to style the image. For example, you can set the width and height of the image using the width and height properties. You can also set the background-image property to make the image a background image. Here's an example of how to do that:</p>
+
+    <p>In this example, we're using CSS to set the background-image property to the URL of the image we want to use as the background. We're also using the background-size property to make sure the image covers the entire background. We're also using the background-position property to center the image. We're also using CSS to set the width and height of the image using the width and height properties. Finally, we're using the object-fit property to make sure the image is scaled to fit inside the container, even if it's not a perfect fit.</p>
+
+    <img
+     src="http://pets-images.dev-apis.com/pets/dog25.jpg"
+     alt="an adorable puppy"
+     />
+<img
+     src="http://pets-images.dev-apis.com/pets/dog26.jpg"
+     alt="an adorable puppy"
+     />
+<img
+     src="http://pets-images.dev-apis.com/pets/dog27.jpg"
+     alt="an adorable puppy"
+     />
+
+
+     <!--
+     
+     input – Browser inputs. Sometimes you need to gather input from the user. Luckily for us, the browser is already really good at doing that. It gives us several types of inputs that you can use. One of the most common ones is the text input, seen here: 
+you can type in me
+. You can also have these input tags do numbers, dates, colors, checkboxes, radio buttons, and others. We'll explore them more later when we talk about forms. Inputs are always self-closing tags. Example: <input />.
+
+-->
+
+    <input type="text" placeholder="Type something here">
+
+    <p>This is a paragraph with a text input in it. The input is a simple text input that allows the user to type in text. It's a great way to gather input from the user.</p>
+
+    <input />
+<input type="text" />
+
+<input type="color" />
+<input type="file" />
+<input type="number" />
+<input type="datetime-local" />
+<input type="radio" />
+<input type="checkbox" />
+<input type="range" />
+<input type="submit" />
+<input type="reset" />
+<input type="button" />
+<input type="hidden" />
+
+<!---
+textarea – Similar to an input but for a lot more text. You'd type long-form responses in here that could have linebreaks in it (a linebreak happens when you hit "return" or "enter" on your keyboard.) Despite never having anything inside of a textarea, it is not a self-closing tag. HTML is a really old language and so we have to live with some old quirks. Example: <textarea></textarea>
+-->
+   
+    <textarea placeholder="Type a long-form response here"></textarea>
+
+    <p>This is a paragraph with a textarea in it. The textarea is a multi-line input that allows the user to type in a lot of text. It's a great way to gather input from the user.</p>
+
+    <textarea></textarea>
+
+
+<!---
+select and option — Sometimes you want to limit a user to a certain group of options to select from. What country you're from, what month you were born in, etc. A select is a user-interactive input that a user can select an option from a dropdown menu. An option is one of the available options. Each option needs a value that will be sent back to the server if the user selects that option. What's inside of the option is what shown to the user. Example: <select><option value="seattle">Seattle</option><option value="portland">Portland</option><option value="san-francisco">San Francisco</option></select>
+
+-->
+
+<select>
+    <option value="seattle">Seattle</option>
+    <option value="portland">Portland</option>
+    <option value="san-francisco">San Francisco</option>
+  </select>
+
+  <p>This is a paragraph with a select input in it. The select input is a dropdown menu that allows the user to select one of several options. It's a great way to gather input from the user.</p>
+  <select>  
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+
+  <!---- 
+  form – A group of html tags related to gathering data from a user. This will be some combination of input, textarea, and select tags. You can then use this form element to send that data to your server. A form tag itself doesn't show anything; it's a just a container for the other tags. We'll use them more later. For now, just know they exist. Example: <form><input /><textarea></textarea></form>
+  -->
+
+  <form>
+    <input placeholder="First Name" />
+    <input placeholder="Last Name" />
+  </form>
+
+  <p>This is a paragraph with a form in it. The form is a container for input tags that allows the user to enter data. It's a great way to gather input from the user.</p>
+  <form>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <br>
+    <label for="interests">Interests:</label>
+    <select id="interests" name="interests">
+      <option value="reading">Reading</option>
+      <option value="hiking">Hiking</option>
+      <option value="travel">Traveling</option>
+    </select>
+    <br>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" cols="50"></textarea>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <!--
+  table, tr, and td – Like making a table in Word or Excel. If you have a table of data, this is the best way to display it. Just for your context, we used to do terrible, awful things with tables to make websites, way back when. Because of that, some tutorial will tell you never ever use tables. That's not good either because when you have tabular data (something you would put into Excel) then tables are very useful. The table is the container for the whole table, tr represents a row, and td represents one cell in the table. Example: <table><tr><td>(0,0)</td><td>(1,0)</td></tr><tr><td>(0,1)</td><td>(1,1)</td></tr></table>
+  -->
+
+  <table>
+    <tr>
+        <td>0,0</td>
+        <td>1,0</td>
+    </tr>
+    <tr>
+        <td>0,1</td>
+        <td>1,1</td>
+    </tr>
+  </table>
+
+  <p>This is a paragraph with a table in it. The table is a container for rows and cells that allows the user to display data in a tabular format. It's a great way to display data.</p>
+
+  <!----
+  Comments
+We, as coders, forget what things do. We write things that are really complicated or we know will be difficult to figure out later. Something to keep in mind is that you are mostly writing code for yourself to read later, not for the computer. The hardest part of writing code is having to maintain it later, not writing it the first time. Writing code the first time is the easier part. Going back and trying to remember what the hell you were thinking is the hard part.
+
+This is where comments can be useful. You can leave little notes in your code that the computer won't read, it'll just ignore them. In HTML, the way you write a comment is <!-- your comments go here . Leave whatever notes you need in between the <!-- and the  so that later you can come back to your code and remember what you were doing. Be careful of going overboard because comments like <h1>Title of the Article</h1><!-- the title -- aren't useful because it's pretty obvious that's the title. It's best to have code that describes itself and don't need comments; however when that falls apart comments can help.
+  -->
+
+  <!--
+  This is a comment. It won't show up on the page, but it's a good way to leave notes for yourself or someone else who might come back to your code later.  
+  -->
+  <!----
+  End of Comments
+  -->   
+
+  <!---
+  This is the way you should do it. The p tag exists so you can have paragraphs. If you want a linebreak, then you should just use p tags to accomplish that. When at all possible (which should be just about always) you should do it this way.
+
+  The br tag is a linebreak tag and it used to be very common. However this is no longer the correct way to do it (but you'll still see it around.) It will occasionally be useful and you'll see it in documentation sometimes so I wanted you to know that it exists, it works, and it's not the preferred way of doing linebreaks.
+  -->
+  <p>This is a paragraph with a linebreak in it. The linebreak is achieved using the br tag, which stands for "break" and is self-closing. It's a great way to add linebreaks to your text.</p>
+  <p>This is a paragraph with a linebreak in it.<br>This is the second line of the paragraph.</p>
+  
+</body>
+</html>
